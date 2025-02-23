@@ -196,7 +196,7 @@ def CreateNodeGroupImpostor():
 
         # create Principled BSDF node
         node_g_principled = group.nodes.new(type='ShaderNodeBsdfPrincipled')
-        node_g_principled.inputs[9].default_value = 0.75
+        #node_g_principled.inputs[9].default_value = 0.75
 
         node_g_mix = group.nodes.new(type='ShaderNodeMixShader')
         node_g_mix.location = 400, 65
@@ -1473,7 +1473,7 @@ class BakeAndCreateImpostorOperator(bpy.types.Operator):
         # ----------------------_Normal_----------------------#
         use_denoising = bpy.context.scene.cycles.use_denoising
         bpy.context.scene.cycles.use_denoising = False
-        context.scene.display_settings.display_device = 'None'
+        context.scene.display_settings.display_device = 'sRGB'
         context.scene.cycles.film_transparent = False
         context.scene.cycles.samples = 64
         context.scene.render.film_transparent = False
